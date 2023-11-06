@@ -39,6 +39,27 @@ function addNote(oldNote) {
   note.appendChild(text);
   note.style.backgroundColor = "#" + randomColour;
   container.appendChild(note);
+
+  if(!oldNote.text) {
+    console.log("new note")
+    createNote();
+  }
+}
+
+async function createNote(e) {
+  const options = {
+      method: "POST",
+      headers: {
+          "Content-Type": "application/json"
+      },
+      body: JSON.stringify({
+          text: " "
+      })
+  }
+  const response = await fetch('http://localhost:3000/whiteboard', options)
+  if (response.status === 201) {
+      e.target.note.value = " "
+  }
 }
 
 const removeNote = (e) => {
