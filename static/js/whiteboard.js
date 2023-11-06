@@ -3,7 +3,22 @@ const container = document.querySelector('#container');
 
 addNoteBtn.addEventListener('click', addNote)
 
-function addNote() {
+function fetchNotes() {
+  fetch("http://localhost:3000/whiteboard")
+    .then(resp => resp.json())
+    .then(data => {
+      addOldNotes(data)
+    })
+}
+
+function addOldNotes(data) {
+  const oldNotes = data;
+  oldNotes.forEach(oldNote => {
+    addNote(oldNote);
+  });
+}
+
+function addNote(oldNote) {
   const deleteBtn = document.createElement("img");
   deleteBtn.setAttribute("src", "../../static/img/bin.png");
   deleteBtn.addEventListener('click', removeNote, { once: true })
@@ -14,6 +29,7 @@ function addNote() {
 
   const text = document.createElement("p");
   text.setAttribute("contenteditable", "true")
+  text.textContent = oldNote.text || " ";
   let randomColour = Math.floor(Math.random() * 16777215).toString(16);
 
   const note = document.createElement("div");
@@ -25,7 +41,6 @@ function addNote() {
   container.appendChild(note);
 }
 
-
 const removeNote = (e) => {
   e.currentTarget.parentNode.remove();
 }
@@ -33,3 +48,4 @@ const removeNote = (e) => {
 // const editNote = (e) => {
 // }
 
+fetchNotes();
