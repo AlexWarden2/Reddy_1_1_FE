@@ -1,22 +1,51 @@
-/*
-How to mix the game type for the random generator question buttons on home page
-[1, 2, 2, 1, 3]
 
-History 
-[4, 5, 5, 6, 6]
 
-Mixed
-[1, 3, 6, 2, 5]
-*/
+const startButton = document.getElementById('start-btn')
+const questionContainerElement = document.getElementById('question-container')
+const answerButtons = document.getElementById('answer-buttons')
+const imgFromURL = document.getElementById('image')
 
-// get random number from server to correspond with question
 
-const randIdx = Math.floor((Math.random() * 7))
 
-fetch("https://reddy-1-1-be.onrender.com/data")
+startButton.addEventListener('click', startGame)
+
+let answers = []
+let correct = []
+let imageURL = []
+
+
+function getRandQuestion() {
+    fetch("http://localhost:3000/data/choosePhoto")
     .then(res => res.json())
-    .then(data => console.log(data.id[randIdx]))
+    .then(data => { fetchInfo(data) })
+
+    function fetchInfo(data){
+
+        correct.push(data.correct)
+        answers.push(data.correct)
+        imageURL.push(data.question)
+
+        for (i=0; i<3; i++){
+            answers.push(data.incorrect[i])
+        }
+    }
+}
+
+getRandQuestion()
+console.log(answers)
+console.log(correct)
+console.log(imageURL)
 
 
+function startGame() {
+    console.log('Started')
+    startButton.classList.add('hide')
+    questionContainerElement.classList.remove('hide')
 
+}
+
+// function showFlag() {
+//     imgFromURL.src = imageURL[0]
+// }
+// showFlag()
 
