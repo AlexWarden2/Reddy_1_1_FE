@@ -83,3 +83,11 @@ body.wrong {
 .hide {
     display: none;
 }
+
+img {
+    max-width: 60%;
+    max-height: 40%;
+    display: flex;
+    justify-content: center;
+    align-items:center;
+}
