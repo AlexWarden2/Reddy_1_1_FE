@@ -25,7 +25,7 @@ function addNote(oldNote) {
 
   const editBtn = document.createElement("img");
   editBtn.setAttribute("src", "../../static/img/edit.png");
-  //editBtn.addEventListener('click', editNote, { once: true })
+  editBtn.addEventListener('click', editNote)
 
   const text = document.createElement("p");
   text.setAttribute("contenteditable", "true")
@@ -40,7 +40,7 @@ function addNote(oldNote) {
   note.style.backgroundColor = "#" + randomColour;
   container.appendChild(note);
 
-  if(!oldNote.text) {
+  if (!oldNote.text) {
     console.log("new note")
     createNote();
   }
@@ -48,17 +48,17 @@ function addNote(oldNote) {
 
 async function createNote(e) {
   const options = {
-      method: "POST",
-      headers: {
-          "Content-Type": "application/json"
-      },
-      body: JSON.stringify({
-          text: " "
-      })
+    method: "POST",
+    headers: {
+      "Content-Type": "application/json"
+    },
+    body: JSON.stringify({
+      text: " "
+    })
   }
   const response = await fetch('http://localhost:3000/whiteboard', options)
   if (response.status === 201) {
-      e.target.note.value = " "
+    e.target.note.value = " "
   }
 }
 
@@ -66,7 +66,8 @@ const removeNote = (e) => {
   e.currentTarget.parentNode.remove();
 }
 
-// const editNote = (e) => {
-// }
+function editNote(e) {
+
+}
 
 fetchNotes();
