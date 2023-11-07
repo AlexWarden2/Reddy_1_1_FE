@@ -10,23 +10,19 @@ let guessedLetters = [];
 let images = new Array("./static/img/hangman/hm1.png", "./static/img/hangman/hm2.png", "./static/img/hangman/hm3.png", "./static/img/hangman/hm4.png", "./static/img/hangman/hm5.png", "./static/img/hangman/hm6.png", "./static/img/hangman/hm7.png", "./static/img/hangman/hm8.png");
 let word = "";
 
-
 fetchQuestion();
-
-
 btn.addEventListener('click', checkLetter)
-
 
 function fetchQuestion() {
     fetch("https://reddy-1-1-be.onrender.com/data/hangman")
-      .then(resp => resp.json())
-      .then(data => {
-        heading.textContent = data.question;
-        console.log(data.correct)
-        word = data.correct.toUpperCase();
-        addLetterDivs();
-      })
-  }
+        .then(resp => resp.json())
+        .then(data => {
+            heading.textContent = data.question;
+            word = data.correct.toUpperCase();
+            addLetterDivs();
+            checkForSpaces();
+        })
+}
 
 function addLetterDivs() {
     for (let i = 0; i < word.length; i++) {
@@ -43,17 +39,26 @@ function createLetterDivs() {
     wordToGuessSection.appendChild(letterDiv);
 }
 
+function checkForSpaces() {
+    for (let i = 0; i < word.length; i++) {
+        if (word[i] == " ") {
+            addCorrectLetter(i, " ");
+        }
+    }
+}
+
 function checkLetter() {
     let found = false;
-    if (!guessedLetters.includes(letterGuessed.value.toUpperCase()) && !wrongLetters.includes(letterGuessed.value.toUpperCase())) {
+    let guess = letterGuessed.value.toUpperCase();
+    if (!guessedLetters.includes(guess) && !wrongLetters.includes(guess) && guess.match(/[a-z]/i)) {
         for (let i = 0; i < word.length; i++) {
-            if (word[i] == letterGuessed.value.toUpperCase()) {
+            if (word[i] == guess) {
                 found = true;
-                addCorrectLetter(i, letterGuessed.value.toUpperCase());
+                addCorrectLetter(i, guess);
             }
         }
         if (!found) {
-            addWrongLetter(letterGuessed.value.toUpperCase())
+            addWrongLetter(guess)
         }
     }
     letterGuessed.value = "";
