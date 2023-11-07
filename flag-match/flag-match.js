@@ -8,6 +8,9 @@ const country3 = document.getElementById('country-3')
 const country4 = document.getElementById('country-4')
 
 const cards = document.querySelectorAll('.card')
+const startAgainBtn = document.getElementById('start-again');
+const winMessage = document.getElementById('win-message');
+
 
 let shuffledNames = []
 let shuffledPhotos = []
@@ -42,6 +45,10 @@ function startGame(data){
     cards.forEach(card => {
         card.addEventListener('click', cardClickHandler)
     })
+
+    startAgainBtn.addEventListener('click', () => {
+        location.reload()
+    })
 }
 
 function shuffleData(data){
@@ -68,9 +75,16 @@ function cardClickHandler() {
             flag: getURL(clickedFlagCard)
         }
         console.log(selectedCards)
-        compare(selectedCards)
-        clickedCountryCard = null;
-        clickedFlagCard = null;
+        if (compare(selectedCards)) {
+            clickedCountryCard.remove()
+            clickedFlagCard.remove()
+            if (checkEmpty()) {
+                startAgainBtn.style.display = 'block'
+                winMessage.style.display = 'block'
+            }
+        }
+        clickedCountryCard = null
+        clickedFlagCard = null
     }
 }
 
@@ -82,10 +96,19 @@ function getURL(card){
 function compare(cardPair){
     for (correctPair of correctPairs){
         if (cardPair.country === correctPair.country && cardPair.flag === correctPair.flag){
-            console.log("CORRECT PAIR")
-            return cardPair
+            console.log('CORRECT PAIR')
+            return true
         }
     }
+}
+
+function checkEmpty(){
+    const remaining = document.querySelectorAll('.card')
+    if (remaining.length === 0){
+        return true
+    } else {
+        return false
+    } 
 }
 
 fetchData()
