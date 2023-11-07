@@ -29,9 +29,9 @@ body {
 
 #upperSection {
     display: flex;
-    justify-content: flex-end;
-    align-items:flex-end;
-    width: 100vh;
+    align-self: flex-end;
+    padding-right: 20px;
+    padding-top: 20px;
 }
 
 h1 {
