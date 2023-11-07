@@ -68,6 +68,7 @@ function cardClickHandler() {
             flag: getURL(clickedFlagCard)
         }
         console.log(selectedCards)
+        compare(selectedCards)
         clickedCountryCard = null;
         clickedFlagCard = null;
     }
@@ -76,6 +77,15 @@ function cardClickHandler() {
 function getURL(card){
     const img = card.querySelector('img')
     return img.src
+}
+
+function compare(cardPair){
+    for (correctPair of correctPairs){
+        if (cardPair.country === correctPair.country && cardPair.flag === correctPair.flag){
+            console.log("CORRECT PAIR")
+            return cardPair
+        }
+    }
 }
 
 fetchData()
