@@ -1,6 +1,5 @@
 # WebsiteName
-
-An educational website focused on learning geography and history. To increase the engagement in non-STEM subjects, the website teaches through fun games like:
+An educational website focused on learning geography and history. To increase the engagement in learning non-STEM subjects, the website teaches through fun games like:
 - Hangman
 - Match country to a flag
 - Guess the country from its outline
@@ -33,7 +32,7 @@ An educational website focused on learning geography and history. To increase th
 - Creating a Trello board with each task that needs to be completed
 - Creating a wireframe for each website
 - Choosing and implementing different tasks from Trello board
-- Pushing and pulling from github frequently to make sure our code is working together
+- Pushing and pulling from github frequently to make sure our code is working together well
 
 # Screenshots/Images
 - add images
@@ -52,7 +51,8 @@ An educational website focused on learning geography and history. To increase th
 
 # Future features
 - User authentication
-- Storing data about which questions were answered incorrectly
+- Storing data about which questions were answered incorrectly, so the user can refer back to what he still needs to work on
+
 
 ### Could have:
 - Badges
@@ -60,23 +60,13 @@ An educational website focused on learning geography and history. To increase th
 - Code snippets
 
 # Important Paths
-- Whole History and Geography data
-https://reddy-1-1-be.onrender.com/data/
-- History and Geography data with selected id
-https://reddy-1-1-be.onrender.com/data/:id
-- Random question for match the flags game
-https://reddy-1-1-be.onrender.com/data/flag-match
-- Random question for guess the country from a flag game
-https://reddy-1-1-be.onrender.com/data/choosePhoto
-- Random question for guess the neighbour game
-https://reddy-1-1-be.onrender.com/data/neigbours
-- Random question for guess the date game
-https://reddy-1-1-be.onrender.com/data/dates
-- Random question for 2 truths 1 lie game
-https://reddy-1-1-be.onrender.com/data/two-truth-one-lie
-- Random Hangman question
-https://reddy-1-1-be.onrender.com/data/hangman
-- All whiteboard notes
-https://reddy-1-1-be.onrender.com/whiteboard
-- Whiteboard note with selected id
-https://reddy-1-1-be.onrender.com/whiteboard/:id
+- <a href="https://reddy-1-1-be.onrender.com/data/">Whole History and Geography data </a>
+- <a href="https://reddy-1-1-be.onrender.com/data/1">History and Geography data with selected id </a>
+- <a href="https://reddy-1-1-be.onrender.com/data/flag-match">Random question for match the flags game </a>
+- <a href="https://reddy-1-1-be.onrender.com/data/choosePhoto">Random question for guess the country from a flag game </a>
+- <a href="https://reddy-1-1-be.onrender.com/data/neigbours">Random question for guess the neighbour game</a>
+- <a href="https://reddy-1-1-be.onrender.com/data/dates">Random question for guess the date game</a>
+- <a href="https://reddy-1-1-be.onrender.com/data/two-truth-one-lie">Random question for 2 truths 1 lie game</a>
+- <a href="https://reddy-1-1-be.onrender.com/data/hangman">Random Hangman question</a>
+- <a href="https://reddy-1-1-be.onrender.com/whiteboard">All whiteboard notes</a>
+- <a href="https://reddy-1-1-be.onrender.com/whiteboard/1">Whiteboard note with selected id</a>
