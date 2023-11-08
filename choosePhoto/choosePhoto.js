@@ -4,6 +4,7 @@ const startButton = document.getElementById('start-btn')
 startButton.addEventListener('click', startGame)
 
 const flagImage = document.getElementById('image')
+const body = document.getElementById('body')
 
 const button1 = document.getElementById('btn1')
 const button2 = document.getElementById('btn2')
@@ -70,12 +71,14 @@ buttons.forEach(button => {
 function checkAnswer() {
    if (this.bool === true){
     this.classList.add('correct')
+    body.classList.add('correct')
     console.log(`correct`)
     score ++
     console.log(`Your score is : ${score}`)
 
    } else {
     this.classList.add('wrong')
+    body.classList.add('wrong')
     console.log(`Incorrect`)
     console.log(`Your score is : ${score}`)
    } 
