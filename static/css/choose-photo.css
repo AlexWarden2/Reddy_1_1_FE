@@ -18,7 +18,7 @@ body{
     height: 100vh;
     justify-content: center;
     align-items: center;
-    background-color: hsl(var(--hue), 100%, 20%);
+    background-color: #B6FFFB;
 }
 
 body.correct {
@@ -32,9 +32,9 @@ body.wrong {
 .container{
     width: 1000px;
     max-width: 80%;
-    background-color: white;
+    background-color: #11A5D3;
     border-radius: 5px;
-    padding: 10px;
+    padding: 30px;
     box-shadow: 0 0 10px 2px;
 }
 
@@ -48,7 +48,7 @@ body.wrong {
 .btn {
     --hue: var(--hue-neutral);
     border: 1px solid hsl(var(--hue), 100%, 30%);
-    background-color:hsl(var(--hue), 100%, 50%) ;
+    background-color: #83DFDA;
     border-radius: 5px;
     padding: 5px 10px;
     color: black;
@@ -67,11 +67,11 @@ body.wrong {
     --hue: var(--hue-wrong);
 }
 
-
-.start-btn, .next-btn {
+.back-btn, .next-btn {
     font-size: 1.5rem;
     font-weight: bold;
     padding: 10px 20px;
+    margin-right: 20px;
 }
 
 .controls {

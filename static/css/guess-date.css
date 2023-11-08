@@ -74,11 +74,11 @@ body.wrong {
     --hue: var(--hue-wrong);
 }
 
-
-.start-btn, .next-btn {
+.back-btn, .next-btn {
     font-size: 1.5rem;
     font-weight: bold;
     padding: 10px 20px;
+    margin-right: 20px;
 }
 
 .controls {

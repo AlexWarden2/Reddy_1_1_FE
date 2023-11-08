@@ -1,11 +1,13 @@
 const questionContainerElement = document.getElementById('question-container')
 const startButton = document.getElementById('start-btn')
-
+const nextQuestionBtn = document.getElementById('next-btn')
+const backButton = document.getElementById('back-btn')
 
 startButton.addEventListener('click', startGame)
 
 
 const questionText = document.getElementById('question')
+const buttons = document.querySelectorAll('.answer')
 const button1 = document.getElementById('btn1')
 const button2 = document.getElementById('btn2')
 const button3 = document.getElementById('btn3')
@@ -19,24 +21,24 @@ button4.addEventListener('click', checkAnswer)
 
 function getRandQuestion() {
     fetch("https://reddy-1-1-be.onrender.com/data/neigbours")
-     .then(res => res.json())
-     .then(data => fetchInfo(data))
+        .then(res => res.json())
+        .then(data => fetchInfo(data))
 }
 getRandQuestion()
 
 
-function fetchInfo(data){
+function fetchInfo(data) {
 
     question = data.question
 
     answers = data.answers
 
-    shuffledAnswers = answers.sort(() => Math.random() -0.5)
+    shuffledAnswers = answers.sort(() => Math.random() - 0.5)
     console.log(shuffledAnswers)
 
     questionText.textContent = question
 
-    button1.textContent = shuffledAnswers[0].text 
+    button1.textContent = shuffledAnswers[0].text
     button2.textContent = shuffledAnswers[1].text
     button3.textContent = shuffledAnswers[2].text
     button4.textContent = shuffledAnswers[3].text
@@ -46,6 +48,17 @@ function fetchInfo(data){
     button3.bool = shuffledAnswers[2].correct
     button4.bool = shuffledAnswers[3].correct
 
+    buttons.forEach(button => {
+        button.addEventListener('click', checkAnswer)
+    })
+
+    nextQuestionBtn.addEventListener('click', () => {
+    location.reload()
+    })
+
+    backButton.addEventListener('click', () => {
+        location.href = 'index.html'
+    })
     // console.log(button1.bool)
     // console.log(button2.bool)
     // console.log(button3.bool)
@@ -60,20 +73,12 @@ function startGame() {
     questionContainerElement.classList.remove('hide')
 }
 
-const buttons = document.querySelectorAll('.btn')
-
-
-buttons.forEach(button => {
-        button.addEventListener('click', checkAnswer)
-    })
-
-function checkAnswer(e) {
-   if (this.bool === true){
-    e.target.classList.add('correct')
-    console.log(e.target)
-    console.log(`correct`)
-   } else {
-    e.target.classList.add('wrong')
-    console.log(`false`)
-   } 
+function checkAnswer() {
+    if (this.bool === true) {
+        this.style.backgroundColor = "green";
+        question.textContent = 'Congratulations, You guessed right'
+        nextQuestionBtn.style.display = 'block'
+    } else {
+        this.style.backgroundColor = "red";
+    }
 }
