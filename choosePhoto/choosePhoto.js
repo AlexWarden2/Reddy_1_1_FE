@@ -18,7 +18,7 @@ button4.addEventListener('click', checkAnswer)
 
 
 function getRandQuestion() {
-    fetch("http://localhost:3000/data/choosePhoto")
+    fetch("https://reddy-1-1-be.onrender.com/")
      .then(res => res.json())
      .then(data => fetchInfo(data))
 }
