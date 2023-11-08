@@ -2,6 +2,7 @@ const addNoteBtn = document.querySelector('#addNoteBtn')
 const container = document.querySelector('#container');
 
 addNoteBtn.addEventListener('click', addNote)
+const homeBtn = document.getElementById('home-btn')
 
 function fetchNotes() {
   fetch("https://reddy-1-1-be.onrender.com/whiteboard")
@@ -39,6 +40,11 @@ function addNote(oldNote) {
   note.appendChild(text);
   note.style.backgroundColor = "#" + randomColour;
   container.appendChild(note);
+
+  // homeBtn.addEventListener('click', () => {
+  //   location.href = 'index.html'
+  // })   needs to be added/fixed to work
+  
 
   if (!oldNote.text) {
     console.log("new note")
