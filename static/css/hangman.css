@@ -9,13 +9,13 @@ header {
     height: 12vh;
     margin: 3vh;
 }
-.upperSection {
+#upperSection {
     display: flex;
     justify-content: space-around;
     height: 50vh;
     margin: 3vh;
 }
-.hangmanSection {
+#hangmanSection {
     background-color: #DDD057;
     width: 85vh;
     display: flex;
@@ -63,7 +63,7 @@ p {
     font-size: 40px;
 }
 
-.userInputSection {
+#userInputSection {
     display: flex;
     justify-content: center;
     align-items:center;
@@ -85,4 +85,15 @@ p {
     height: 40px;
     border-radius: 10px;
     background-color: #DDD057;
+}
+
+.newGameBtn {
+    width: 100px;
+    height: 60px;
+    background-color: #B6FFFB;
+    margin: 50px;
+    border: none;
+    font-size: 20px;
+    font-weight: bold;
+    border-radius: 20px;
 }

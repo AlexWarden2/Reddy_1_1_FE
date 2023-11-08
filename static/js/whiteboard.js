@@ -67,7 +67,56 @@ const removeNote = (e) => {
 }
 
 function editNote(e) {
+  // let newNote = e.currentTarget.parentNode.getElementsByTagName("P")[0].innerHTML;
+  // alert(newNote);
 
+  // const http = require("https");
+  // const url = 'http://localhost:3000/whiteboard';
+
+  // const options = {
+  //   method: 'PATCH',
+  //   'Accept': 'application/json',
+  //   'Content-Type': 'application/json',
+  // };
+
+  // let result = '';
+  // const req = http.request(url, options, (res) => {
+  //   console.log(res.statusCode);
+
+  //   res.setEncoding('utf8');
+  //   res.on('newNote', (chunk) => {
+  //     result += chunk;
+  //   });
+
+  //   res.on('end', () => {
+  //     console.log(result);
+  //   });
+  // });
+
+  // req.on('error', (e) => {
+  //   console.error(e);
+  // });
+
+  // req.write(newNote);
+  // req.end();
+
+
+
+
+
+  // const options = {
+  //   method: "PATCH",
+  //   headers: {
+  //     "Content-Type": "application/json"
+  //   },
+  //   body: JSON.stringify({
+  //     text: newNote
+  //   })
+  // }
+  // const response = await fetch('http://localhost:3000/whiteboard', options)
+  // if (response.status === 201) {
+  //   e.target.note.value = newNote;
+  // }
 }
 
 fetchNotes();
