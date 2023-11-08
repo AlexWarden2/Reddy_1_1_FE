@@ -24,7 +24,7 @@ async function createNewScore(e) {
         body: JSON.stringify(score)
     }
 
-    const response = await fetch("http://localhost:3000/scores", options);
+    const response = await fetch("https://reddy-1-1-be.onrender.com/scores", options);
 
     if (response.ok) {
         alert("Score added.");
