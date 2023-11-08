@@ -4,7 +4,7 @@ const container = document.querySelector('#container');
 addNoteBtn.addEventListener('click', addNote)
 
 function fetchNotes() {
-  fetch("http://localhost:3000/whiteboard")
+  fetch("https://reddy-1-1-be.onrender.com/whiteboard")
     .then(resp => resp.json())
     .then(data => {
       addOldNotes(data)
