@@ -101,10 +101,6 @@ function checkResults() {
 }
 
 function cleanScreen() {
-    wrongLettersSection.remove();
-    hangmanSection.remove();
-    wordToGuessSection.remove();
-    userInputSection.remove();
     heading.textContent = "Do you want to play again?"
     const newGameBtnYes = document.createElement("button");
     const newGameBtnNo = document.createElement("button");
@@ -112,6 +108,13 @@ function cleanScreen() {
     newGameBtnYes.setAttribute("class", "newGameBtn");
     newGameBtnNo.textContent = "No"
     newGameBtnNo.setAttribute("class", "newGameBtn");
+
+    newGameBtnYes.addEventListener('click', () => {
+        location.reload()
+    })
+    newGameBtnNo.addEventListener('click', () => {
+        location.href = 'http://127.0.0.1:8080/home.html'
+    })
     upperSection.appendChild(newGameBtnYes);
     upperSection.appendChild(newGameBtnNo);
 }
