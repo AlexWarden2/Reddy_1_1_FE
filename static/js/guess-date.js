@@ -1,7 +1,9 @@
 const questionContainerElement = document.getElementById('question-container')
 const question = document.getElementById('question')
+
 const startButton = document.getElementById('start-btn')
 const nextQuestionBtn = document.getElementById('next-btn');
+const backButton = document.getElementById('back-btn')
 
 const buttons = document.querySelectorAll('.answer')
 const button1 = document.getElementById('btn1')
@@ -13,16 +15,16 @@ getRandQuestion()
 
 function getRandQuestion() {
     fetch("https://reddy-1-1-be.onrender.com/data/dates")
-     .then(res => res.json())
-     .then(data => fetchInfo(data))
+        .then(res => res.json())
+        .then(data => fetchInfo(data))
 }
 
-function fetchInfo(data){
+function fetchInfo(data) {
     question.textContent = data.question;
     answers = data.answers
-    shuffledAnswers = answers.sort(() => Math.random() -0.5)
+    shuffledAnswers = answers.sort(() => Math.random() - 0.5)
 
-    button1.textContent = shuffledAnswers[0].text 
+    button1.textContent = shuffledAnswers[0].text
     button2.textContent = shuffledAnswers[1].text
     button3.textContent = shuffledAnswers[2].text
     button4.textContent = shuffledAnswers[3].text
@@ -38,14 +40,18 @@ function fetchInfo(data){
     nextQuestionBtn.addEventListener('click', () => {
         location.reload()
     })
+
+    backButton.addEventListener('click', () => {
+        location.href = 'index.html'
+    })
 }
 
 function checkAnswer() {
-   if (this.bool === true){
-    this.style.backgroundColor = "green";
-    question.textContent = 'Congratulations, You guessed right'
-    nextQuestionBtn.style.display = 'block'
-   } else {
-    this.style.backgroundColor = "red";
-   } 
+    if (this.bool === true) {
+        this.style.backgroundColor = "green";
+        question.textContent = 'Congratulations, You guessed right'
+        nextQuestionBtn.style.display = 'block'
+    } else {
+        this.style.backgroundColor = "red";
+    }
 }

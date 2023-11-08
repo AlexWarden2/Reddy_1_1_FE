@@ -113,7 +113,7 @@ function cleanScreen() {
         location.reload()
     })
     newGameBtnNo.addEventListener('click', () => {
-        location.href = 'http://127.0.0.1:8080/home.html'
+        location.href = 'index.html'
     })
     upperSection.appendChild(newGameBtnYes);
     upperSection.appendChild(newGameBtnNo);

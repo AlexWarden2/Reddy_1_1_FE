@@ -8,7 +8,8 @@ const country3 = document.getElementById('country-3')
 const country4 = document.getElementById('country-4')
 
 const cards = document.querySelectorAll('.card')
-const startAgainBtn = document.getElementById('start-again');
+const nextBtn = document.getElementById('next');
+const homeBtn = document.getElementById('home')
 const winMessage = document.getElementById('win-message');
 
 
@@ -46,8 +47,13 @@ function startGame(data){
         card.addEventListener('click', cardClickHandler)
     })
 
-    startAgainBtn.addEventListener('click', () => {
+    nextBtn.addEventListener('click', () => {
+        // location.href = ''   should give next random question
         location.reload()
+    })
+    homeBtn.addEventListener('click', () => {
+        // location.href = ''   should give next random question
+        location.href = 'index.html'
     })
 }
 
@@ -79,7 +85,8 @@ function cardClickHandler() {
             clickedCountryCard.remove()
             clickedFlagCard.remove()
             if (checkEmpty()) {
-                startAgainBtn.style.display = 'block'
+                nextBtn.style.display = 'block'
+                homeBtn.style.display = 'block'
                 winMessage.style.display = 'block'
             }
         }

@@ -4,6 +4,7 @@ const button3 = document.getElementById('btn-3')
 
 const question = document.getElementById('question')
 const nextQuestionBtn = document.getElementById('next-btn');
+const homeBtn = document.getElementById('home-btn')
 
 const buttons = document.querySelectorAll('.answer-button')
 
@@ -34,7 +35,11 @@ function startGame(data){
     })
 
     nextQuestionBtn.addEventListener('click', () => {
-        location.reload()
+        location.reload() // should load up a ranomdly selected question and pass current score onto it
+    })
+
+    homeBtn.addEventListener('click', () => {
+        location.href = 'index.html'
     })
 }
 
