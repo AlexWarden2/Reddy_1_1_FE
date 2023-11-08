@@ -67,10 +67,13 @@ buttons.forEach(button => {
         button.addEventListener('click', checkAnswer)
     })
 
-function checkAnswer() {
+function checkAnswer(e) {
    if (this.bool === true){
+    e.target.classList.add('correct')
+    console.log(e.target)
     console.log(`correct`)
    } else {
+    e.target.classList.add('wrong')
     console.log(`false`)
    } 
 }
