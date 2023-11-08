@@ -1,8 +1,13 @@
 const btn = document.querySelector('#submitLetter');
 const wordToGuessSection = document.querySelector('#wordToGuessSection');
+const userInputSection = document.querySelector('#userInputSection');
 const wrongLettersList = document.querySelector('#wrongLettersList');
 const letterGuessed = document.querySelector('#guessLetter');
 const heading = document.querySelector('h1');
+const startAgainBtn = document.getElementById('start-again');
+const wrongLettersSection = document.querySelector('#wrongLettersSection');
+const hangmanSection = document.querySelector('#hangmanSection');
+const upperSection = document.querySelector('#upperSection');
 
 let hangmanImage = document.querySelector('#hangman');
 let wrongLetters = [];
@@ -87,8 +92,26 @@ function addWrongLetter(wrongLetter) {
 function checkResults() {
     if (guessedLetters.length === word.length) {
         alert("Congrats! You won!");
+        cleanScreen();
     }
     if (wrongLetters.length === 7) {
         alert("You lost!");
+        cleanScreen();
     }
+}
+
+function cleanScreen() {
+    wrongLettersSection.remove();
+    hangmanSection.remove();
+    wordToGuessSection.remove();
+    userInputSection.remove();
+    heading.textContent = "Do you want to play again?"
+    const newGameBtnYes = document.createElement("button");
+    const newGameBtnNo = document.createElement("button");
+    newGameBtnYes.textContent = "Yes"
+    newGameBtnYes.setAttribute("class", "newGameBtn");
+    newGameBtnNo.textContent = "No"
+    newGameBtnNo.setAttribute("class", "newGameBtn");
+    upperSection.appendChild(newGameBtnYes);
+    upperSection.appendChild(newGameBtnNo);
 }
