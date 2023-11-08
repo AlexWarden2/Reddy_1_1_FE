@@ -16,9 +16,9 @@ const button4 = document.getElementById('btn4')
 // button4.addEventListener('click', checkAnswer)
 
 
-let answers = []
-let shuffledAnswers = []
-let correct = []
+// let answers = []
+// let shuffledAnswers = []
+// let correct = []
 
 function getRandQuestion() {
     fetch("https://reddy-1-1-be.onrender.com/data/choosePhoto")
@@ -45,6 +45,8 @@ function fetchInfo(data){
     btn4.textContent = shuffledAnswers[3]
 }
 fetchInfo()
+
+console.log(answers)
 
 
 function startGame() {
