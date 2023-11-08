@@ -1,0 +1,11 @@
+
+.btn-container {
+    display: grid;
+    grid-template-columns: repeat(1, auto);
+    grid-template-rows: repeat(3, auto);
+
+    justify-content: space-evenly;
+    align-content: space-evenly;
+
+    grid-gap: 30px;
+}
