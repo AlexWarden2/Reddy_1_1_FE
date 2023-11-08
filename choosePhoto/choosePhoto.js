@@ -1,7 +1,6 @@
 const questionContainerElement = document.getElementById('question-container')
 const startButton = document.getElementById('start-btn')
 
-
 startButton.addEventListener('click', startGame)
 
 const flagImage = document.getElementById('image')
@@ -16,6 +15,8 @@ button2.addEventListener('click', checkAnswer)
 button3.addEventListener('click', checkAnswer)
 button4.addEventListener('click', checkAnswer)
 
+
+let score = [0]
 
 function getRandQuestion() {
     fetch("https://reddy-1-1-be.onrender.com/data/choosePhoto")
@@ -32,7 +33,7 @@ function fetchInfo(data){
     answers = data.answers
 
     shuffledAnswers = answers.sort(() => Math.random() -0.5)
-    console.log(shuffledAnswers)
+    // console.log(shuffledAnswers)
 
     button1.textContent = shuffledAnswers[0].text 
     button2.textContent = shuffledAnswers[1].text
@@ -51,7 +52,6 @@ function fetchInfo(data){
 }
 fetchInfo()
 
-
 function startGame() {
     // console.log('Started')
     startButton.classList.add('hide')
@@ -65,10 +65,20 @@ buttons.forEach(button => {
         button.addEventListener('click', checkAnswer)
     })
 
+
+
 function checkAnswer() {
    if (this.bool === true){
+    this.classList.add('correct')
     console.log(`correct`)
+    score ++
+    console.log(`Your score is : ${score}`)
+
    } else {
-    console.log(`false`)
+    this.classList.add('wrong')
+    console.log(`Incorrect`)
+    console.log(`Your score is : ${score}`)
    } 
 }
+
+
