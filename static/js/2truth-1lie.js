@@ -90,7 +90,7 @@ function shuffleData(data){
 
 function buttonClickHandler(){
     if (this.bool === true){
-        // console.log('Correct')
+        console.log('Correct')
         // buttons.forEach(button => {
         //     button.remove()
         // })
@@ -99,14 +99,16 @@ function buttonClickHandler(){
 
         const next = document.querySelector("#create-score");
         next.addEventListener('click', createNewScore);
-        
 
     } else {
         console.log('Incorrect')
         question.textContent = 'Unlucky, thats incorrect!'
         nextQuestionBtnI.style.display = 'block'
         // return false
+
     }
 }
 
 fetchData()
+
+

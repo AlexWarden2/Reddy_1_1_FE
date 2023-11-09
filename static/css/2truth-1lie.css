@@ -26,8 +26,10 @@
 
 .answer-button.correct{
     --hue: var(--hue-correct);
+    border-width: medium;
 }
 
 .answer-button.wrong{
     --hue: var(--hue-wrong);
+    border-width: medium;
 }
