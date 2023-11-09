@@ -65,10 +65,14 @@ body.wrong {
 
 .btn.correct{
     --hue: var(--hue-correct);
+    border-width: medium;
+
 }
 
 .btn.wrong{
     --hue: var(--hue-wrong);
+    border-width: medium;
+
 }
 
 .btn-grid{

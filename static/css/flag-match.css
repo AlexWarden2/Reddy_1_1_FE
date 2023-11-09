@@ -1,5 +1,4 @@
 body {
-    background-color: #B6FFFB;
     height: 95vh;
 }
 
@@ -39,13 +38,8 @@ img {
     --hue: var(--hue-neutral);
     border: 1px solid hsl(var(--hue), 100%, 30%);
     border-radius: 5px;
-    padding: 5px 10px;
     color: black;
     outline: none;
-    font-size: 1.5rem;
-    font-weight: bold;
-    padding: 10px 20px;
-    margin-right: 20px;
 }
 
 p {

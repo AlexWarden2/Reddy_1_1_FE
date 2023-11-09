@@ -48,10 +48,10 @@ function fetchInfo(data) {
 
 function checkAnswer() {
     if (this.bool === true) {
-        this.style.backgroundColor = "green";
+        this.classList.add('correct')
         question.textContent = 'Congratulations, You guessed right'
         nextQuestionBtn.style.display = 'block'
     } else {
-        this.style.backgroundColor = "red";
+        this.classList.add('wrong')
     }
 }

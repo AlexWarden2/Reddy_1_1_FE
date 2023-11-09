@@ -55,11 +55,11 @@ function buttonClickHandler(){
         // })
         question.textContent = 'Congratulations, You guessed right'
         nextQuestionBtn.style.display = 'block'
-        this.style.backgroundColor = "green";
+        this.classList.add('correct')
 
     } else {
         console.log('Incorrect')
-        this.style.backgroundColor = "red";
+        this.classList.add('wrong')
         return false
     }
 }
