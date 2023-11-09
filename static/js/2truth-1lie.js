@@ -1,10 +1,44 @@
+const next = document.querySelector("#create-score");
+next.addEventListener('click', createNewScore);
+
+async function createNewScore(e) {
+    e.preventDefault()
+
+    const score = {
+        id: e.length + 1,
+        score: e.length + 1
+    }
+
+    const options = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(score)
+    }
+
+    const response = await fetch("https://reddy-1-1-be.onrender.com/total", options);
+
+    if (response.ok) {
+        alert("Score added.");
+    }
+}
+
+////////////////////////////////////////////////////////////////////////
+
 const button1 = document.getElementById('btn-1')
 const button2 = document.getElementById('btn-2')
 const button3 = document.getElementById('btn-3')
 
 const question = document.getElementById('question')
-const nextQuestionBtn = document.getElementById('next-btn');
 const homeBtn = document.getElementById('back-btn')
+//////////////////////////////////////////////////////////////////////////
+
+
+const nextQuestionBtnC = document.getElementById('create-score');
+const nextQuestionBtnI = document.getElementById('next-btn-incorrect');
+
+//////////////////////////////////////////////////////////////////////////
 
 const buttons = document.querySelectorAll('.answer-button')
 
@@ -34,10 +68,17 @@ function startGame(data){
         button.addEventListener('click', buttonClickHandler)
     })
 
-    nextQuestionBtn.addEventListener('click', () => {
+
+///////////////////////////////////////////////////////////////////////////////
+    nextQuestionBtnC.addEventListener('click', () => {
         location.reload() // should load up a ranomdly selected question and pass current score onto it
     })
 
+    nextQuestionBtnI.addEventListener('click', () => {
+        location.reload() 
+    })
+
+///////////////////////////////////////////////////////////////////////////////
     homeBtn.addEventListener('click', () => {
         location.href = 'index.html'
     })
@@ -49,19 +90,25 @@ function shuffleData(data){
 
 function buttonClickHandler(){
     if (this.bool === true){
-        // console.log('Correct')
+        console.log('Correct')
         // buttons.forEach(button => {
         //     button.remove()
         // })
-        question.textContent = 'Congratulations, You guessed right'
-        nextQuestionBtn.style.display = 'block'
-        this.classList.add('correct')
+        question.textContent = 'Congratulations, You guessed right!'
+        nextQuestionBtnC.style.display = 'block'
+
+        const next = document.querySelector("#create-score");
+        next.addEventListener('click', createNewScore);
 
     } else {
         console.log('Incorrect')
-        this.classList.add('wrong')
-        return false
+        question.textContent = 'Unlucky, thats incorrect!'
+        nextQuestionBtnI.style.display = 'block'
+        // return false
+
     }
 }
 
 fetchData()
+
+
