@@ -1,30 +1,3 @@
-//////////////////////////////////////////////////////////////////
-
-const next = document.querySelector("#create-score");
-next.addEventListener('click', createNewScore);
-
-async function createNewScore(e) {
-    e.preventDefault()
-
-    const score = {
-        id: e.length + 1,
-        score: e.length + 1
-    }
-
-    const options = {
-        method: "POST",
-        headers: {
-            "Content-Type": "application/json"
-        },
-        body: JSON.stringify(score)
-    }
-
-    const response = await fetch("http://localhost:3000/total", options);
-
-    if (response.ok) {
-        alert("Score added.");
-    }
-}
 
 //////////////////////////////////////////////////////////////////////
 //for the home page
