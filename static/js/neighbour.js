@@ -12,7 +12,7 @@ const button4 = document.getElementById('btn4')
 getRandQuestion()
 
 function getRandQuestion() {
-    fetch("https://reddy-1-1-be.onrender.com/data/neigbours")
+    fetch("https://reddy-1-1-be.onrender.com/data/neighbours")
         .then(res => res.json())
         .then(data => fetchInfo(data))
 }

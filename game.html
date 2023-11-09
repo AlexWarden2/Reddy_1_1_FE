@@ -4,12 +4,25 @@
     <meta charset="UTF-8">
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <script defer src="./game.js"></script>
+    <script src="https://kit.fontawesome.com/232d2b9458.js" crossorigin="anonymous"></script>
+    <link rel="stylesheet" href = "./game.css">
     <title>Score Test</title>
 </head>
 <body>
     <button id="create-score" type="submit" value="Create">Next</button>
 
-    <button id="view-score">View Score</button>
+
+    <div class="container">
+
+        <button id="view-score" type="submit" class="btn" onclick="openPopup()">View Score</button>
+
+        <div class="popup" id="popup">
+            <i class="fa-solid fa-face-smile"></i>
+            <h2></h2>
+            <button type="button" onclick="closePopup()">OK</button>
+        </div>
+
+    </div>
 
 </body>
 </html>
