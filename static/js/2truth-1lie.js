@@ -89,19 +89,17 @@ function shuffleData(data){
 }
 
 function buttonClickHandler(){
+    button1.disabled = true;
+    button2.disabled = true;
+    button3.disabled = true;
     if (this.bool === true){
-        console.log('Correct')
-        // buttons.forEach(button => {
-        //     button.remove()
-        // })
+        this.classList.add("correct");
         question.textContent = 'Congratulations, You guessed right!'
         nextQuestionBtnC.style.display = 'block'
-
         const next = document.querySelector("#create-score");
         next.addEventListener('click', createNewScore);
-
     } else {
-        console.log('Incorrect')
+        this.classList.add("wrong");
         question.textContent = 'Unlucky, thats incorrect!'
         nextQuestionBtnI.style.display = 'block'
         // return false
