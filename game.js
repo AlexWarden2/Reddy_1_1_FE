@@ -13,7 +13,7 @@ function fetchScore() {
         .then(resp => resp.json())
         .then(data => {
             score = data.length -1;
-            const markup = `<h2>Your score is ${score}</h2>`
+            const markup = `<h2>Your score for today is ${score}!</h2>`
 
 
             document.querySelector(`h2`).insertAdjacentHTML('beforeend', markup)
