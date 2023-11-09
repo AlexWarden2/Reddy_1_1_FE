@@ -40,13 +40,12 @@ An educational website focused on learning geography and history. To increase th
 
 ## Wins
 - Managed to deploy server and fetch data from it
-- Created a fully working hangman game
+- Created 6 fully working mini games
 
 ## Chalenges
 - Getting the correct information from the back-end and making sure it was well-organised as there is a lot of data
-- Scoring system that needs all of the indibidual game scores to present a total score the user
+- Scoring system that needs all of the individual game scores to present a total score to the user
 - New member of the team halfway through the project
-- music section - where users listen to snippets of music and have to guess the song
 
 # Bugs
 - add bugs
@@ -54,7 +53,7 @@ An educational website focused on learning geography and history. To increase th
 # Future features
 - User authentication
 - Storing data about which questions were answered incorrectly, so the user can refer back to what he still needs to work on
-- music section - where users listen to snippets of music and have to guess the song
+- Music section - where users listen to snippets of music and have to guess the song
 - Randomised test function
 
 ### Could have:
@@ -66,7 +65,7 @@ An educational website focused on learning geography and history. To increase th
 - <a href="https://reddy-1-1-be.onrender.com/data/">Whole History and Geography data </a>
 - <a href="https://reddy-1-1-be.onrender.com/data/1">History and Geography data with selected id </a>
 - <a href="https://reddy-1-1-be.onrender.com/data/flag-match">Random question for match the flags game </a>
-- <a href="https://reddy-1-1-be.onrender.com/data/choosePhoto">Random question for guess the country from a flag game </a>
+- <a href="https://reddy-1-1-be.onrender.com/data/choosePhoto">Random question for guess the country from an outline game </a>
 - <a href="https://reddy-1-1-be.onrender.com/data/neigbours">Random question for guess the neighbour game</a>
 - <a href="https://reddy-1-1-be.onrender.com/data/dates">Random question for guess the date game</a>
 - <a href="https://reddy-1-1-be.onrender.com/data/two-truth-one-lie">Random question for 2 truths 1 lie game</a>

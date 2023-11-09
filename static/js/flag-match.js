@@ -66,11 +66,13 @@ function cardClickHandler() {
         console.log('country')
         if (!clickedCountryCard){
             clickedCountryCard = this
+            clickedCountryCard.style.outline = "thick solid black"
         }
     } else if (this.classList.contains('flag')){
         console.log('flag')
         if (!clickedFlagCard){
             clickedFlagCard = this
+            clickedFlagCard.style.outline = "thick solid black"
         }
     } 
     
@@ -79,6 +81,8 @@ function cardClickHandler() {
             country: clickedCountryCard.textContent.trim(),
             flag: getURL(clickedFlagCard)
         }
+        clickedFlagCard.style.outline = "none";
+        clickedCountryCard.style.outline = "none";
         console.log(selectedCards)
         if (compare(selectedCards)) {
             clickedCountryCard.remove()

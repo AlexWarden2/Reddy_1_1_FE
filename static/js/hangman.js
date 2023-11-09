@@ -91,17 +91,16 @@ function addWrongLetter(wrongLetter) {
 
 function checkResults() {
     if (guessedLetters.length === word.length) {
-        alert("Congrats! You won!");
+        heading.textContent = "Congrats! You won! Do you want to play again?"
         cleanScreen();
     }
     if (wrongLetters.length === 7) {
-        alert("You lost!");
+        heading.textContent = "You lost! Do you want to play again?"
         cleanScreen();
     }
 }
 
 function cleanScreen() {
-    heading.textContent = "Do you want to play again?"
     const newGameBtnYes = document.createElement("button");
     const newGameBtnNo = document.createElement("button");
     newGameBtnYes.textContent = "Yes"
