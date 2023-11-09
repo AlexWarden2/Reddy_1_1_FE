@@ -44,11 +44,11 @@ body.wrong {
     box-shadow: 0 0 10px 2px;
 }
 
-.container geo{
-    background-color: white;
+.geo{
+    background-color: #11A5D3;
 }
 
-.container his{
+.his{
     background-color: #DDD057;
 }
 
@@ -56,4 +56,38 @@ body.wrong {
     display: flex;
     justify-content: center;
     align-items:center;
+}
+
+
+.btn:hover{
+    border-color: black;
+}
+
+.btn.correct{
+    --hue: var(--hue-correct);
+}
+
+.btn.wrong{
+    --hue: var(--hue-wrong);
+}
+
+.btn-grid{
+    display: grid;
+    grid-template-columns: repeat(2, auto);
+    gap: 10px;
+    margin: 20px 0;
+}
+
+.back-btn, .next-btn {
+    font-size: 1.5rem;
+    font-weight: bold;
+    padding: 10px 20px;
+    margin-right: 20px;
+}
+
+#question {
+    display: flex;
+    justify-content: center;
+    align-items:center;
+    margin-bottom: 35px;
 }
