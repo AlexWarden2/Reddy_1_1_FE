@@ -72,10 +72,13 @@ body.wrong {
     display: none;
 }
 
-img {
-    max-width: 60%;
-    max-height: 40%;
+#imageDiv {
     display: flex;
     justify-content: center;
     align-items:center;
+}
+img {
+    max-width: 50vh;
+    max-height: 50vh;
+
 }

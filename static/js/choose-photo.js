@@ -2,7 +2,7 @@ const questionContainerElement = document.getElementById('question-container')
 const backButton = document.getElementById('back-btn')
 const nextQuestionBtn = document.getElementById('next-btn');
 
-const flagImage = document.getElementById('image')
+const outlineImg = document.getElementById('image')
 const body = document.getElementById('body')
 
 const button1 = document.getElementById('btn1')
@@ -27,7 +27,7 @@ function getRandQuestion() {
 
 function fetchInfo(data){
 
-    flagImage.src = data.question;
+    outlineImg.src = data.question;
 
     answers = data.answers
 
@@ -55,6 +55,10 @@ function fetchInfo(data){
 
     backButton.addEventListener('click', () => {
         location.href = 'index.html'
+    })
+
+    nextQuestionBtn.addEventListener('click', () => {
+        location.reload()
     })
 }
 fetchInfo()

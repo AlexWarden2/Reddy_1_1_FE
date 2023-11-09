@@ -53,11 +53,13 @@ function buttonClickHandler(){
         // buttons.forEach(button => {
         //     button.remove()
         // })
-        question.textContent = 'Congratulations, You guess right'
+        question.textContent = 'Congratulations, You guessed right'
         nextQuestionBtn.style.display = 'block'
+        this.style.backgroundColor = "green";
 
     } else {
         console.log('Incorrect')
+        this.style.backgroundColor = "red";
         return false
     }
 }
