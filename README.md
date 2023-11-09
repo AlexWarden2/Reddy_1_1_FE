@@ -24,7 +24,6 @@ An educational website focused on learning geography and history. To increase th
 - CSS
 - Express API
 - NodeJS
-- Bootstrap?
 
 # Process
 - Creating a Figma board with all our ideas for different functionalities
