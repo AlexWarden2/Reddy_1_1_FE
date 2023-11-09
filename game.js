@@ -24,9 +24,11 @@ async function createNewScore(e) {
         body: JSON.stringify(score)
     }
 
-    const response = await fetch("https://reddy-1-1-be.onrender.com/scores", options);
+    const response = await fetch("https://reddy-1-1-be.onrender.com/total", options);
 
     if (response.ok) {
         alert("Score added.");
     }
 }
+
+
