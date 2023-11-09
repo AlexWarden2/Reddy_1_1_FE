@@ -97,11 +97,12 @@ function fetchInfo(data){
 fetchInfo()
 
 function checkAnswer() {
+    button1.disabled = true;
+    button2.disabled = true;
+    button3.disabled = true;
+    button4.disabled = true;
     if (this.bool === true){
-        console.log('Correct')
-        // buttons.forEach(button => {
-        //     button.remove()
-        // })
+        this.classList.add("correct");
         question.textContent = 'Congratulations, You guessed right!'
         nextQuestionBtnC.style.display = 'block'
 
@@ -109,10 +110,8 @@ function checkAnswer() {
         next.addEventListener('click', createNewScore);
 
     } else {
-        console.log('Incorrect')
+        this.classList.add("wrong");
         question.textContent = 'Unlucky, thats incorrect!'
         nextQuestionBtnI.style.display = 'block'
-        // return false
-
     }
 }
