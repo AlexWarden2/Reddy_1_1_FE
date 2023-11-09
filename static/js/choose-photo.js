@@ -26,13 +26,9 @@ function getRandQuestion() {
 
 
 function fetchInfo(data){
-
     outlineImg.src = data.question;
-
     answers = data.answers
-
     shuffledAnswers = answers.sort(() => Math.random() -0.5)
-    // console.log(shuffledAnswers)
 
     button1.textContent = shuffledAnswers[0].text 
     button2.textContent = shuffledAnswers[1].text
@@ -43,11 +39,6 @@ function fetchInfo(data){
     button2.bool = shuffledAnswers[1].correct
     button3.bool = shuffledAnswers[2].correct
     button4.bool = shuffledAnswers[3].correct
-
-    // console.log(button1.bool)
-    // console.log(button2.bool)
-    // console.log(button3.bool)
-    // console.log(button4.bool)
 
     buttons.forEach(button => {
         button.addEventListener('click', checkAnswer)
@@ -63,11 +54,9 @@ function fetchInfo(data){
 }
 fetchInfo()
 
-
 function checkAnswer() {
    if (this.bool === true){
     this.classList.add('correct')
-    console.log(`correct`)
     score ++
     console.log(`Your score is : ${score}`)
     question.textContent = 'Congratulations, You guessed right'
@@ -75,9 +64,6 @@ function checkAnswer() {
 
    } else {
     this.classList.add('wrong')
-    console.log(`Incorrect`)
     console.log(`Your score is : ${score}`)
    } 
 }
-
-
