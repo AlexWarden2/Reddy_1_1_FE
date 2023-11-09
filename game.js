@@ -5,7 +5,6 @@
 //after run calculate score after 5 mini games
 
 const next = document.querySelector("#create-score");
-
 next.addEventListener('click', createNewScore);
 
 async function createNewScore(e) {
@@ -24,11 +23,35 @@ async function createNewScore(e) {
         body: JSON.stringify(score)
     }
 
-    const response = await fetch("https://reddy-1-1-be.onrender.com/total", options);
+    const response = await fetch("http://localhost:3000/total", options);
 
     if (response.ok) {
         alert("Score added.");
     }
+}
+
+
+
+
+
+
+let score = 0
+fetchScore()
+
+const viewScore = document.querySelector("#view-score");
+viewScore.addEventListener('click', printScore);
+
+function fetchScore() {
+    fetch("http://localhost:3000/total")
+        .then(resp => resp.json())
+        .then(data => {
+            score = data.length -1;
+            // printScore();
+        })
+}
+
+function printScore() {
+    alert(`Your score is ${score}`)
 }
 
 
