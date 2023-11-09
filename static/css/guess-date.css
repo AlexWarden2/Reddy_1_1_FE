@@ -3,21 +3,6 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-:root {
-    --hue-neutral: 200;
-    --hue-wrong: 0;
-    --hue-correct: 145;
-}
-
-.container{
-    width: 1000px;
-    max-width: 80%;
-    background-color: #DDD057;
-    border-radius: 5px;
-    padding: 30px;
-    box-shadow: 0 0 10px 2px;
-}
-
 #question {
     display: flex;
     justify-content: center;
@@ -61,12 +46,3 @@
     margin-right: 20px;
 }
 
-.controls {
-    display: flex;
-    justify-content: center;
-    align-items:center;
-}
-
-.hide {
-    display: none;
-}
