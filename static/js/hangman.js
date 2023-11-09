@@ -8,6 +8,7 @@ const startAgainBtn = document.getElementById('start-again');
 const wrongLettersSection = document.querySelector('#wrongLettersSection');
 const hangmanSection = document.querySelector('#hangmanSection');
 const upperSection = document.querySelector('#upperSection');
+const backButton = document.getElementById('back-btn')
 
 let hangmanImage = document.querySelector('#hangman');
 let wrongLetters = [];
@@ -17,6 +18,10 @@ let word = "";
 
 fetchQuestion();
 btn.addEventListener('click', checkLetter)
+
+backButton.addEventListener('click', () => {
+    location.href = 'index.html'
+})
 
 function fetchQuestion() {
     fetch("https://reddy-1-1-be.onrender.com/data/hangman")
