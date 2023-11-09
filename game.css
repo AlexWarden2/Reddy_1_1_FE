@@ -1,6 +1,4 @@
 *{
-    margin: 0;
-    padding: 0;
     box-sizing: border-box;
     font-family: 'Courier New', Courier, monospace;
 }
@@ -47,7 +45,6 @@ is underneath so it will overide popup properties above when it is activated upo
     transform: translate(-50%, -50%) scale(1);
 
 }
-
 
 .popup i{
     font-size: 130px;
