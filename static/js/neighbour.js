@@ -1,6 +1,42 @@
+const next = document.querySelector("#create-score");
+next.addEventListener('click', createNewScore);
+
+async function createNewScore(e) {
+    e.preventDefault()
+
+    const score = {
+        id: e.length + 1,
+        score: e.length + 1
+    }
+
+    const options = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(score)
+    }
+
+    const response = await fetch("http://localhost:3000/total", options);
+
+    if (response.ok) {
+        alert("Score added.");
+    }
+}
+
+////////////////////////////////////////////////////////////////////////
+
 const questionContainerElement = document.getElementById('question-container')
 const question = document.getElementById('question')
-const nextQuestionBtn = document.getElementById('next-btn');
+
+//////////////////////////////////////////////////////////////////////////
+
+const nextQuestionBtnC = document.getElementById('create-score');
+const nextQuestionBtnI = document.getElementById('next-btn-incorrect');
+
+//////////////////////////////////////////////////////////////////////////
+
+
 const backButton = document.getElementById('back-btn')
 
 const buttons = document.querySelectorAll('.answer')
@@ -35,9 +71,16 @@ function fetchInfo(data) {
         button.addEventListener('click', checkAnswer)
     })
 
-    nextQuestionBtn.addEventListener('click', () => {
-        location.reload()
+    ///////////////////////////////////////////////////////////////////////////////
+    nextQuestionBtnC.addEventListener('click', () => {
+        location.reload() // should load up a ranomdly selected question and pass current score onto it
     })
+
+    nextQuestionBtnI.addEventListener('click', () => {
+        location.reload() 
+    })
+
+    ///////////////////////////////////////////////////////////////////////////////
 
     backButton.addEventListener('click', () => {
         location.href = 'index.html'
@@ -45,11 +88,22 @@ function fetchInfo(data) {
 }
 
 function checkAnswer() {
-    if (this.bool === true) {
-        this.classList.add('correct')
-        question.textContent = 'Congratulations, You guessed right'
-        nextQuestionBtn.style.display = 'block'
+    if (this.bool === true){
+        console.log('Correct')
+        // buttons.forEach(button => {
+        //     button.remove()
+        // })
+        question.textContent = 'Congratulations, You guessed right!'
+        nextQuestionBtnC.style.display = 'block'
+
+        const next = document.querySelector("#create-score");
+        next.addEventListener('click', createNewScore);
+
     } else {
-        this.classList.add('wrong')
+        console.log('Incorrect')
+        question.textContent = 'Unlucky, thats incorrect!'
+        nextQuestionBtnI.style.display = 'block'
+        // return false
+
     }
 }
