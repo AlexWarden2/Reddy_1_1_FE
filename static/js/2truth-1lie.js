@@ -4,7 +4,7 @@ const button3 = document.getElementById('btn-3')
 
 const question = document.getElementById('question')
 const nextQuestionBtn = document.getElementById('next-btn');
-const homeBtn = document.getElementById('home-btn')
+const homeBtn = document.getElementById('back-btn')
 
 const buttons = document.querySelectorAll('.answer-button')
 

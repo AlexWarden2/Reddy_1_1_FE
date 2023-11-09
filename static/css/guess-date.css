@@ -3,20 +3,6 @@
     font-family: Verdana, Geneva, Tahoma, sans-serif;
 }
 
-#question {
-    display: flex;
-    justify-content: center;
-    align-items:center;
-    margin-bottom: 35px;
-}
-
-.btn-grid{
-    display: grid;
-    grid-template-columns: repeat(2, auto);
-    gap: 15px;
-    margin: 20px 0;
-}
-
 .btn {
     --hue: var(--hue-neutral);
     border: 1px solid hsl(var(--hue), 100%, 30%);
@@ -26,23 +12,3 @@
     color: black;
     outline: none;
 }
-
-.btn:hover{
-    border-color: black;
-}
-
-.btn.correct{
-    --hue: var(--hue-correct);
-}
-
-.btn.wrong{
-    --hue: var(--hue-wrong);
-}
-
-.back-btn, .next-btn {
-    font-size: 1.5rem;
-    font-weight: bold;
-    padding: 10px 20px;
-    margin-right: 20px;
-}
-

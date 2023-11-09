@@ -9,9 +9,8 @@ const country4 = document.getElementById('country-4')
 
 const cards = document.querySelectorAll('.card')
 const nextBtn = document.getElementById('next');
-const homeBtn = document.getElementById('home')
+const homeBtn = document.getElementById('back-btn')
 const winMessage = document.getElementById('win-message');
-
 
 let shuffledNames = []
 let shuffledPhotos = []
