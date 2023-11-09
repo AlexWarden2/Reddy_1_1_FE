@@ -32,6 +32,16 @@ img {
     height: 185px;
 }
 
+img:hover{
+    cursor: pointer;
+    transform: translate(-5%, 5%) ;
+}
+
+.country:hover{
+    cursor: pointer;
+    transform: translate(-5%, 5%) ;
+}
+
 .next-btn, .back-btn {
     background-color: #83DFDA;
     margin-bottom: 20px;
@@ -40,6 +50,7 @@ img {
     border-radius: 5px;
     color: black;
     outline: none;
+    margin-top: 30px;
 }
 
 p {

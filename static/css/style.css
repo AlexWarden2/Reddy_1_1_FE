@@ -17,14 +17,6 @@ body.history{
     background-color: #FEFFB5;
 }
 
-body.correct {
-    --hue: var(--hue-correct);
-}
-
-body.wrong {
-    --hue: var(--hue-wrong);
-}
-
 :root {
     --hue-neutral: 200;
     --hue-wrong: 0;
@@ -34,7 +26,6 @@ body.wrong {
 .hide {
     display: none;
 }
-
 
 .container{
     width: 1000px;
@@ -57,7 +48,6 @@ body.wrong {
     justify-content: center;
     align-items:center;
 }
-
 
 .btn:hover{
     border-color: black;
