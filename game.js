@@ -27,6 +27,7 @@ async function createNewScore(e) {
 }
 
 //////////////////////////////////////////////////////////////////////
+//for the home page
 
 let score = 0
 fetchScore()
@@ -51,7 +52,6 @@ function printScore() {
     console.log(`Your score is ${score}`)
 }
 
-//////////////////////////////////////////////////////////////////
 
 //popip animations
 let popup = document.getElementById("popup");
@@ -64,3 +64,4 @@ const closePopup = () => {
     popup.classList.remove("open-popup");
 }
 
+//////////////////////////////////////////////////////////////////
