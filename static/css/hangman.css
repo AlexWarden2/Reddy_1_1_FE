@@ -77,10 +77,11 @@ p {
     font-size: 40px;
     padding-left: 10px;
     margin-right: 20px;
+    margin-left: 20px;
 }
 
 
-#submitLetter {
+#submitLetter, #back-btn {
     width: 80px;
     height: 40px;
     border-radius: 10px;
