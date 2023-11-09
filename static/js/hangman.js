@@ -92,7 +92,7 @@ function addWrongLetter(wrongLetter) {
 function checkResults() {
     if (guessedLetters.length === word.length) {
         heading.textContent = "Congrats! You won! Do you want to play again?"
-        cleanScreen();
+        cleanScreenCorrect();
     }
     if (wrongLetters.length === 7) {
         heading.textContent = "You lost! Do you want to play again?"
@@ -117,3 +117,60 @@ function cleanScreen() {
     upperSection.appendChild(newGameBtnYes);
     upperSection.appendChild(newGameBtnNo);
 }
+
+
+////////////////////////////////////////////////////////////////////////
+function cleanScreenCorrect() {
+    const newGameBtnYes = document.createElement("button");
+    const newGameBtnNo = document.createElement("button");
+    newGameBtnYes.textContent = "Yes"
+    newGameBtnYes.setAttribute("class", "newGameBtn");
+    newGameBtnYes.setAttribute("id", "create-score");
+
+    newGameBtnNo.textContent = "No"
+    newGameBtnNo.setAttribute("class", "newGameBtn");
+    newGameBtnYes.setAttribute("id", "create-score");
+
+    newGameBtnYes.addEventListener('click', () => {
+        location.reload()
+    })
+    newGameBtnNo.addEventListener('click', () => {
+        location.href = '../../index.html'
+    })
+    upperSection.appendChild(newGameBtnYes);
+    upperSection.appendChild(newGameBtnNo);
+
+    const next = document.querySelector("#create-score");
+    next.addEventListener('click', createNewScore);
+}
+
+
+
+
+const next = document.querySelector("#create-score");
+next.addEventListener('click', createNewScore);
+
+async function createNewScore(e) {
+    e.preventDefault()
+
+    const score = {
+        id: e.length + 1,
+        score: e.length + 1
+    }
+
+    const options = {
+        method: "POST",
+        headers: {
+            "Content-Type": "application/json"
+        },
+        body: JSON.stringify(score)
+    }
+
+    const response = await fetch("http://localhost:3000/total", options);
+
+    if (response.ok) {
+        alert("Score added.");
+    }
+}
+
+////////////////////////////////////////////////////////////////////////
