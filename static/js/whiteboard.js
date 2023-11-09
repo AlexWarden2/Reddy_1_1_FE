@@ -1,5 +1,6 @@
 const addNoteBtn = document.querySelector('#addNoteBtn')
 const container = document.querySelector('#container');
+const backButton = document.getElementById('back-btn')
 
 addNoteBtn.addEventListener('click', addNote)
 const homeBtn = document.getElementById('home-btn')
@@ -124,5 +125,9 @@ function editNote(e) {
   //   e.target.note.value = newNote;
   // }
 }
+
+backButton.addEventListener('click', () => {
+  location.href = 'index.html'
+})
 
 fetchNotes();
