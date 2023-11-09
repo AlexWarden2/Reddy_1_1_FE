@@ -24,6 +24,10 @@ button {
     font-family: 'Inter', sans-serif;
 }
 
+button:hover{
+    cursor: pointer;
+}
+
 body {
     display: flex;
     justify-content: center;
