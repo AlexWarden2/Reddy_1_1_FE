@@ -169,7 +169,7 @@ async function createNewScore(e) {
     const response = await fetch("http://localhost:3000/total", options);
 
     if (response.ok) {
-        alert("Score added.");
+        // alert("Score added.");
     }
 }
 
