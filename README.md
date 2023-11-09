@@ -44,7 +44,10 @@ An educational website focused on learning geography and history. To increase th
 - Created a fully working hangman game
 
 ## Chalenges
-- add challenges
+- Getting the correct information from the back-end and making sure it was well-organised as there is a lot of data
+- Scoring system that needs all of the indibidual game scores to present a total score the user
+- New member of the team halfway through the project
+- music section - where users listen to snippets of music and have to guess the song
 
 # Bugs
 - add bugs
@@ -52,7 +55,8 @@ An educational website focused on learning geography and history. To increase th
 # Future features
 - User authentication
 - Storing data about which questions were answered incorrectly, so the user can refer back to what he still needs to work on
-
+- music section - where users listen to snippets of music and have to guess the song
+- Randomised test function
 
 ### Could have:
 - Badges
