@@ -20,6 +20,7 @@ An educational website focused on learning geography and history. To increase th
 - Run 'npm run dev' command
 
 # Technologies
+- HTML
 - Javascript
 - CSS
 - Express API
