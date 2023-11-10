@@ -134,19 +134,24 @@ function cleanScreenCorrect() {
 
     newGameBtnNo.textContent = "No"
     newGameBtnNo.setAttribute("class", "newGameBtn");
-    newGameBtnNo.setAttribute("id", "create-score");
+    newGameBtnNo.setAttribute("id", "create-score1");
 
     newGameBtnYes.addEventListener('click', () => {
         location.reload()
     })
+
     newGameBtnNo.addEventListener('click', () => {
         location.href = '../../index.html'
     })
+
     upperSection.appendChild(newGameBtnYes);
     upperSection.appendChild(newGameBtnNo);
 
     const next = document.querySelector("#create-score");
     next.addEventListener('click', createNewScore);
+
+    const next1 = document.querySelector("#create-score1");
+    next1.addEventListener('click', createNewScore);
 }
 
 
@@ -154,6 +159,9 @@ function cleanScreenCorrect() {
 
 const next = document.querySelector("#create-score");
 next.addEventListener('click', createNewScore);
+
+const next1 = document.querySelector("#create-score1");
+next1.addEventListener('click', createNewScore);
 
 async function createNewScore(e) {
     e.preventDefault()
