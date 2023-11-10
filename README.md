@@ -1,4 +1,4 @@
-# A.P.P G.A.M.E
+# A.P.P G.A.M.E Front End
 An educational website focused on learning geography and history. To increase the engagement in learning non-STEM subjects, the website teaches through fun games like:
 - Hangman
 - Match country to a flag
