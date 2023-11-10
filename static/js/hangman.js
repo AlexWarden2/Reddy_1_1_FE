@@ -134,7 +134,7 @@ function cleanScreenCorrect() {
 
     newGameBtnNo.textContent = "No"
     newGameBtnNo.setAttribute("class", "newGameBtn");
-    newGameBtnYes.setAttribute("id", "create-score");
+    newGameBtnNo.setAttribute("id", "create-score");
 
     newGameBtnYes.addEventListener('click', () => {
         location.reload()
