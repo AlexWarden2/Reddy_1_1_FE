@@ -1,4 +1,4 @@
-# WebsiteName
+# A.P.P G.A.M.E
 An educational website focused on learning geography and history. To increase the engagement in learning non-STEM subjects, the website teaches through fun games like:
 - Hangman
 - Match country to a flag
@@ -35,10 +35,16 @@ An educational website focused on learning geography and history. To increase th
 - Pushing and pulling from github frequently to make sure our code is working together well
 
 # Screenshots/Images
-- add images
+<img src="https://i.ibb.co/5RmKjND/i1.png" alt="i1" border="0">
+<img src="https://i.ibb.co/fnVg1y6/i2.png" alt="i2" border="0">
+<img src="https://i.ibb.co/hYbBy5Q/i3.png" alt="i3" border="0">
+<img src="https://i.ibb.co/ySkb0Lz/i4.png" alt="i4" border="0">
+<img src="https://i.ibb.co/cY6g25Y/i5.png" alt="i5" border="0">
+<img src="https://i.ibb.co/KmTbnSX/i6.png" alt="i6" border="0">
+<img src="https://i.ibb.co/CVbJR5v/i7.png" alt="i7" border="0">
+<img src="https://i.ibb.co/kx2c8Sx/i8.png" alt="i8" border="0">
 
 # Wins & Challenges
-
 ## Wins
 - Managed to deploy server and fetch data from it
 - Created 6 fully working mini games
@@ -48,19 +54,11 @@ An educational website focused on learning geography and history. To increase th
 - Scoring system that needs all of the individual game scores to present a total score to the user
 - New member of the team halfway through the project
 
-# Bugs
-- add bugs
-
 # Future features
 - User authentication
 - Storing data about which questions were answered incorrectly, so the user can refer back to what he still needs to work on
 - Music section - where users listen to snippets of music and have to guess the song
 - Randomised test function
-
-### Could have:
-- Badges
-- Contribution guide
-- Code snippets
 
 # Important Paths
 - <a href="https://reddy-1-1-be.onrender.com/data/">Whole History and Geography data </a>
